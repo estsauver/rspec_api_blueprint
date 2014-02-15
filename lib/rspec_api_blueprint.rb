@@ -18,6 +18,7 @@ RSpec.configure do |config|
   end
 
   config.after(:each, type: :request) do
+    binding.pry
     response ||= @response
     request ||= @request
 
