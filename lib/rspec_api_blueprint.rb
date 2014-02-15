@@ -34,11 +34,7 @@ RSpec.configure do |config|
       example_groups[-1][:description_args].first.match(/(\w+)\sRequests/)
       file_name = $1.underscore
 
-      if defined? Rails
-        file = File.join(Rails.root, "/docs/api_docs/#{file_name}.txt")
-      else
-        file = File.join(File.expand_path('.'), "/api_docs/#{file_name}.txt")
-      end
+      file = File.join(File.expand_path('.'), "docs/api_docs/#{file_name}.txt")
 
       File.open(file, 'a') do |f|
         # Resource & Action
